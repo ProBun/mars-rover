@@ -9,8 +9,8 @@ import (
 var lostError = fmt.Errorf("LOST")
 
 type Rover struct {
-	XPos    int
-	YPos    int
+	xPos    int
+	yPos    int
 	heading int // * 90 for heading in degrees
 	Lost    bool
 	planet  planet.Planet
