@@ -23,8 +23,8 @@ func TestRover_ProcessMoveCommands(t *testing.T) {
 		{
 			"basic movement",
 			Rover{
-				XPos:    0,
-				YPos:    0,
+				xPos:    0,
+				yPos:    0,
 				heading: 0,
 				planet:  &mars,
 			},
@@ -37,8 +37,8 @@ func TestRover_ProcessMoveCommands(t *testing.T) {
 		{
 			"getting out of range",
 			Rover{
-				XPos:    0,
-				YPos:    0,
+				xPos:    0,
+				yPos:    0,
 				heading: 0,
 				planet:  &mars,
 			},
@@ -53,8 +53,8 @@ func TestRover_ProcessMoveCommands(t *testing.T) {
 		t.Run(test.name, func(t *testing.T) {
 			err := test.rover.ProcessMoveCommands(test.command)
 			assert.Equal(t, test.err, err)
-			assert.Equal(t, test.expectedX, test.rover.XPos)
-			assert.Equal(t, test.expectedY, test.rover.YPos)
+			assert.Equal(t, test.expectedX, test.rover.xPos)
+			assert.Equal(t, test.expectedY, test.rover.yPos)
 			assert.Equal(t, test.expectedHeading, test.rover.heading)
 		})
 

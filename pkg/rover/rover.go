@@ -66,22 +66,22 @@ func (r *Rover) RotateDrone(direction rune) error {
 func (r *Rover) MoveForward() error {
 	switch r.heading {
 	case 0:
-		r.XPos++
+		r.xPos++
 	case 1:
-		r.YPos++
+		r.yPos++
 	case 2:
-		r.XPos--
+		r.xPos--
 	case 3:
-		r.XPos--
+		r.yPos--
 	}
 
-	if r.XPos > r.planet.X()-1 || r.XPos < 0 {
+	if r.xPos > r.planet.X()-1 || r.xPos < 0 {
 		r.CurrentPosition()
 		r.Lost = true
 		return lostError
 	}
 
-	if r.YPos > r.planet.Y()-1 || r.YPos < 0 {
+	if r.yPos > r.planet.Y()-1 || r.yPos < 0 {
 		r.CurrentPosition()
 		r.Lost = true
 		return lostError
@@ -91,7 +91,7 @@ func (r *Rover) MoveForward() error {
 }
 
 func (r *Rover) CurrentPosition() {
-	fmt.Print(fmt.Sprintf("(%d,%d,%s) ", r.XPos, r.YPos, processHeading(r.heading)))
+	fmt.Print(fmt.Sprintf("(%d,%d,%s) ", r.xPos, r.yPos, processHeading(r.heading)))
 }
 
 func processHeading(heading int) string {
