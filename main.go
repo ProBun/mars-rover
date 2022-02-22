@@ -13,7 +13,7 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Please specify size of the grid (example: 5 8): ")
+	fmt.Print("Please specify size of the grid, example(5 8): ")
 	input, err := reader.ReadString('\n')
 	if err != nil {
 		fmt.Println("There was a problem reading input")
