@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  app:
+    image: golang:alpine
+    entrypoint: go run main.go
+    working_dir: /go/src/app
+    volumes:
+      - ./:/go/src/app
+      - $GOPATH/pkg/mod:/go/pkg/mod
